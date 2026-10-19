@@ -1,0 +1,15 @@
+/*Hero paragrph slideshow*/
+#hero-text {
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/*Fade out*/
+#hero-text-fade-out {
+  opacity: 0;
+}
+
+/*Fixed height to prevent buttons moving*/
+.hero-content p {
+  min-height: 80px;
+}
