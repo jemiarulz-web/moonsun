@@ -1,5 +1,4 @@
-const holyText =
-  document.getElementById("holy-text");
+const slideshowHeroText = document.getElementById("hero-text");
 const holymessages = [
   "MoonSun creates immersive mystery experience for those who believe there is more to existence than what we can see.",
   "Discover hidden stories, mysterious world, and experience beyond imagination",
@@ -9,8 +8,10 @@ const holymessages = [
 
 let presentMessage = 0;
 function changeText() {
+  if (!slideshowHeroText) return;
+
   //fade out
-  holyText.classList.add("fade-out");
+  slideshowHeroText.classList.add("fade-out");
   setTimeout(() => {
     //Move to next message
     presentMessage++;
@@ -18,10 +19,12 @@ function changeText() {
       presentMessage = 0;
     }
     //Change text
-    holyText.textContent = holymessages[presentMessage];
+    slideshowHeroText.textContent = holymessages[presentMessage];
     //Fade in
-    holyText.classList.remove("fade-out");
+    slideshowHeroText.classList.remove("fade-out");
   }, 500);
 }
 //Change text every 5 seconds
-setInterval(changeText, 4000); 
+if (slideshowHeroText) {
+  setInterval(changeText, 4000);
+}
